@@ -1,0 +1,20 @@
+INFORME DE LIMPIEZA DE DATOS:
+
+- Se descarga el dataset de Kaggle (Datos con permiso de utilización )-Online Business Sales.
+
+- Se cambia el nombre de los dos archivos CSV para una identificación clara del contenido de cada uno.
+
+LIMPIEZA ARCHIVO ventas:
+
+* Se encuentran en la columna Product.Type 8 filas con valor vacio (""), se eliminan usando el paquete dplyr y la función filter.
+* Sen encuentran en la fila 1767 valores incongruentes , se procede, a partir de la funcion filter, a eliminar esa fila.
+* Compruebo si hay valores NA en el dataset mediante any(is.na(dataset)).
+* Creamos un dataframe con el total de productos vendidos de cada tipo, así como su porcentaje.
+* Filtro los productos más relevantes (> 4% en ventas netas), el resto los agrupo en una nueva categoría llamada "Otros".
+
+LIMPIEZA ARCHIVO contabilidad:
+
+* Compruebo si hay valores NA en el dataset mediante any(is.na(dataset)).
+* Junto las columnas Month y Year en una nueva columna Date y convierto a formato fecha.
+* Se ha cambiado el nombre a la columna Year por Año y Month por Mes para tener consistencia en las viz.
+
